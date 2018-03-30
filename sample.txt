@@ -1,0 +1,6 @@
+Banana
+Strawberry
+Mango
+Pineapple
+Kiwi
+Watermelon
