@@ -1,6 +1,6 @@
 for i in range(120000000000):
   x = ""
-  if(i % 3 == 0):
+  if(i%3 == 0):
     x+="Fizz"
   if(i%5 == 0):
     x+="Buzz"
