@@ -1,5 +1,5 @@
 print("Hello, World!");
-lst = [];
+lst = list();
 lst.append("Test");
 lst.append("is");
 lst.append("a");

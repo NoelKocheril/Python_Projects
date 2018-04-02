@@ -1,6 +1,6 @@
-import replit
 from time import sleep
 from termcolor import colored
+import os
 
 class Cell:
   def __init__(self,who = None):
@@ -72,7 +72,7 @@ class Board:
     if(self.grid[0][col].who == "R" or self.grid[0][col].who == "B"):
       return False
     for i in range(self.row-1,-1,-1):
-      if(self.grid[i][col].who == None):
+      if(self.grid[i][col].who is None):
         if (p):
           self.grid[i][col].who = "R"
           return True
@@ -119,52 +119,52 @@ class Board:
         # print(w1 == w2 == w3 == w4)
         
         #A1-4
-        if ((w1 == w2 == w3 == w4) and w1 != None):
+        if (w1 == w2 == w3 == w4) and w1 is not None:
           print("WINNER!")
           return True
         
         #B1-4
-        if ((w5 == w6 == w7 == w8) and w5 != None):
+        if (w5 == w6 == w7 == w8) and w5 is not None:
           print("WINNER!")
           return True
         
         #C1-4
-        if ((w9 == w10 == w11 == w12) and w9 != None):
+        if (w9 == w10 == w11 == w12) and w9 is not None:
           print("WINNER!")
           return True
         
         #D1-4
-        if ((w13 == w14 == w15 == w16) and w13 != None):
+        if (w13 == w14 == w15 == w16) and w13 is not None:
           print("WINNER!")
           return True
           
         #A-D1
-        if ((w1 == w5 == w9 == w13) and w1 != None):
+        if (w1 == w5 == w9 == w13) and w1 is not None:
           print("WINNER!")
           return True
         
         #A-D2
-        if ((w2 == w6 == w10 == w14) and w2 != None):
+        if (w2 == w6 == w10 == w14) and w2 is not None:
           print("WINNER!")
           return True
         
         #A-D3
-        if ((w3 == w7 == w11 == w15) and w3 != None):
+        if (w3 == w7 == w11 == w15) and w3 is not None:
           print("WINNER!")
           return True
         
         #A-D4
-        if ((w4 == w8 == w12 == w16) and w1 != None):
+        if (w4 == w8 == w12 == w16) and w1 is not None:
           print("WINNER!")
           return True
         
         # A1,B2,C3,D4
-        if ((w1 == w6 == w11 == w16)  and w1 != None):
+        if (w1 == w6 == w11 == w16)  and w1 is not None:
           print("WINNER!")
           return True
         
         # A4,B3,C2,D1
-        if ((w4 == w7 == w10 == w13)  and w1 != None):
+        if (w4 == w7 == w10 == w13)  and w1 is not None:
           print("WINNER!")
           return True
         
@@ -177,7 +177,7 @@ class Game:
     
   def playGame(self):
     while True:
-      replit.clear()
+      os.system('cls')
       print(self.b)
       if (self.b.Player):
         print(colored("Red","red"))
@@ -191,7 +191,7 @@ class Game:
           self.b.Player = not self.b.Player
           if(self.b.checkGame()):
             break
-        #replit.clear()
+        #os.system('cls')
         # sleep(.100)
       if (s == "Quit!"):
         break;
@@ -199,6 +199,6 @@ class Game:
 
 Gme = Game()
 sleep(.2)
-replit.clear()
+os.system('cls')
 print(Gme.b)
 print("Winner!")

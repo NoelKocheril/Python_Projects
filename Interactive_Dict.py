@@ -14,6 +14,10 @@ def define(w):
     w = w.lower()
     if w in dict:
         return strip_def(dict[w])
+    elif w.title() in dict:
+        return strip_def(dict[w.title()])
+    elif w.upper() in dict:
+        return strip_def(dict[w.upper()])
     else:
         matches = get_close_matches(w,dict.keys())
         for m in matches:

@@ -9,5 +9,7 @@ test = "This is a test string"
 print(Calc_Length(test))
 test="thi"
 print(Calc_Length(test))
+# noinspection PyTypeChecker
 print(Calc_Length(10))
+# noinspection PyTypeChecker
 print(Calc_Length(10.3))
